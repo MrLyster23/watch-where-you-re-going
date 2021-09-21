@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
            Debug.Log("Collided with" + collision.gameObject.name + "with powerup set to" + hasPowerup);
+	    // What if we use a different ForceMode or don't specify it at all?
             enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
         }
     }
